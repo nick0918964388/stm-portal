@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, Row, Col, Tabs } from 'antd';
-import { LineChart, BarChart, Progress } from '@ant-design/charts';
+import { LineChart, BarChart } from '@ant-design/charts';
 import { CountdownList } from '../components/CountdownList';
 import { StatisticCards } from '../components/StatisticCards';
 import { weeklyReportConfig, monthlyReportConfig } from '../config/chartConfig';

@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  transpilePackages: ['@ant-design/charts', 'antd'],
+  transpilePackages: ['@ant-design/charts', 'antd', '@ant-design/plots'],
   webpack: (config) => {
     return config;
   },
