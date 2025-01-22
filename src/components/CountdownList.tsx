@@ -147,7 +147,6 @@ export const CountdownList: React.FC = () => {
       dataIndex: 'meterNo',
       key: 'meterNo',
       width: 150,
-      filterable: true,
     },
     {
       title: '區處',
