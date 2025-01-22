@@ -444,8 +444,10 @@ export const CountdownList: React.FC = () => {
               dataSource={getFilteredData()}
               expandable={{
                 expandedRowRender: expandedRowRender,
+                expandRowByClick: true,
               }}
               rowKey="id"
+              className="countdown-table"
             />
           </Tabs.TabPane>
           <Tabs.TabPane tab="已通報" key="reported">
@@ -454,8 +456,10 @@ export const CountdownList: React.FC = () => {
               dataSource={getFilteredData()}
               expandable={{
                 expandedRowRender: expandedRowRender,
+                expandRowByClick: true,
               }}
               rowKey="id"
+              className="countdown-table"
             />
           </Tabs.TabPane>
           <Tabs.TabPane tab="未通報" key="unreported">
@@ -464,8 +468,10 @@ export const CountdownList: React.FC = () => {
               dataSource={getFilteredData()}
               expandable={{
                 expandedRowRender: expandedRowRender,
+                expandRowByClick: true,
               }}
               rowKey="id"
+              className="countdown-table"
             />
           </Tabs.TabPane>
         </Tabs>

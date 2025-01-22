@@ -2,6 +2,7 @@
   padding: 24px;
   background: #f0f2f5;
   min-height: 100vh;
+  transition: all 0.3s;
 }
 
 .site-header {
@@ -437,4 +438,203 @@
   flex-direction: column;
   gap: 8px;
   margin-left: 40px;
+}
+
+.theme-toggle {
+  position: relative;
+  z-index: 1000;
+}
+
+.theme-toggle .anticon {
+  font-size: 20px;
+  transition: all 0.3s;
+}
+
+.theme-toggle:hover .anticon {
+  transform: scale(1.1);
+}
+
+/* Dark theme adjustments */
+[data-theme='dark'] {
+  background: #141414;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+[data-theme='dark'] .dashboard-container {
+  background: #141414;
+}
+
+[data-theme='dark'] .site-header {
+  background: #1f1f1f;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme='dark'] .main-tabs {
+  background: #1f1f1f;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme='dark'] .chart-card {
+  background: #1f1f1f;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme='dark'] .chart-card .ant-card-head {
+  background: #141414;
+  border-bottom: 1px solid #303030;
+}
+
+[data-theme='dark'] .list-card {
+  background: #1f1f1f;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme='dark'] .countdown-table {
+  background: #1f1f1f;
+}
+
+[data-theme='dark'] .countdown-table .ant-table-thead > tr > th {
+  background: #141414 !important;
+  color: rgba(255, 255, 255, 0.85);
+  border-bottom: 1px solid #303030;
+}
+
+[data-theme='dark'] .countdown-table .ant-table-tbody > tr > td {
+  background: #1f1f1f !important;
+  border-bottom: 1px solid #303030;
+}
+
+[data-theme='dark'] .countdown-table .ant-table-tbody > tr:hover > td {
+  background: #303030 !important;
+}
+
+[data-theme='dark'] .ant-table-expanded-row > td {
+  background: #1f1f1f !important;
+}
+
+[data-theme='dark'] .timeline-card {
+  background: #1f1f1f !important;
+}
+
+[data-theme='dark'] .timeline-container {
+  background: #1f1f1f;
+}
+
+[data-theme='dark'] .timeline-filters {
+  background: #1f1f1f;
+}
+
+[data-theme='dark'] .timeline-time {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+[data-theme='dark'] .timeline-event-text {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+[data-theme='dark'] .timeline-event-description {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+[data-theme='dark'] .timeline-card .ant-timeline-item-tail {
+  border-left: 2px solid #303030;
+}
+
+[data-theme='dark'] .details-json {
+  background: #141414;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+[data-theme='dark'] .details-header {
+  background: #1f1f1f;
+  border-bottom: 1px solid #303030;
+}
+
+[data-theme='dark'] .timeline-detail-trigger:hover {
+  background: #303030;
+}
+
+[data-theme='dark'] .ant-tabs-nav {
+  background: #141414 !important;
+  border-bottom: 1px solid #303030;
+}
+
+[data-theme='dark'] .ant-tabs-content {
+  background: #1f1f1f;
+}
+
+[data-theme='dark'] .ant-tabs-tab {
+  background: transparent !important;
+  color: rgba(255, 255, 255, 0.65) !important;
+}
+
+[data-theme='dark'] .ant-tabs-tab:hover {
+  color: #177ddc !important;
+}
+
+[data-theme='dark'] .ant-tabs-tab-active {
+  background: #111b26 !important;
+  color: #177ddc !important;
+}
+
+[data-theme='dark'] .ant-tabs-ink-bar {
+  background: #177ddc !important;
+}
+
+[data-theme='dark'] .recharts-cartesian-grid-horizontal line,
+[data-theme='dark'] .recharts-cartesian-grid-vertical line {
+  stroke: #303030;
+}
+
+[data-theme='dark'] .recharts-text {
+  fill: rgba(255, 255, 255, 0.65);
+}
+
+[data-theme='dark'] .custom-tooltip {
+  background-color: rgba(0, 0, 0, 0.85);
+  border: 1px solid #303030;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+[data-theme='dark'] .tooltip-date {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+[data-theme='dark'] .tooltip-value {
+  color: #177ddc;
+}
+
+[data-theme='dark'] .ant-statistic-title {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+[data-theme='dark'] .ant-statistic-content {
+  color: #177ddc !important;
+}
+
+[data-theme='dark'] .ant-table {
+  background: #1f1f1f;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+[data-theme='dark'] .ant-table-cell {
+  background: #1f1f1f !important;
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+[data-theme='dark'] .ant-empty-description {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+[data-theme='dark'] .ant-timeline-item-content {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+[data-theme='dark'] .ant-timeline {
+  color: rgba(255, 255, 255, 0.85);
+  background: #1f1f1f;
+}
+
+[data-theme='dark'] .ant-timeline-item-head {
+  background: #1f1f1f !important;
 } 

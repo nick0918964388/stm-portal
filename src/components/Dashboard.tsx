@@ -1,12 +1,14 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Card, Row, Col, Tabs, Typography, Radio, DatePicker } from 'antd';
+import { Card, Row, Col, Tabs, Typography, Radio, DatePicker, Button } from 'antd';
 import { CountdownList } from './CountdownList';
 import { StatisticCards } from './StatisticCards';
 import {
   LineChart,
   Line as RechartsLine,
+  BarChart,
+  Bar,
   XAxis,
   YAxis,
   CartesianGrid,
@@ -14,16 +16,41 @@ import {
   ResponsiveContainer,
 } from 'recharts';
 import dayjs from 'dayjs';
+import { BulbOutlined, BulbFilled } from '@ant-design/icons';
+import { useTheme } from '../app/providers';
 
 const { Title } = Typography;
 
+interface ChartData {
+  date: string;
+  count: number;
+}
+
+interface AllData {
+  week: ChartData[];
+  month: ChartData[];
+  year: ChartData[];
+  [key: string]: ChartData[]; // 添加索引簽名
+}
+
+interface DistrictData {
+  district: string;
+  count: number;
+}
+
+interface DistrictDataSet {
+  counting: DistrictData[];
+  reported: DistrictData[];
+}
+
 const Dashboard: React.FC = () => {
-  const [timeRange, setTimeRange] = useState('week');
+  const { isDark, toggleTheme } = useTheme();
+  const [timeRange, setTimeRange] = useState<'week' | 'month' | 'year' | 'custom'>('week');
   const [customDateRange, setCustomDateRange] = useState<[dayjs.Dayjs, dayjs.Dayjs] | null>(null);
   const { RangePicker } = DatePicker;
 
   // 圖表範例資料
-  const allData = {
+  const allData: AllData = {
     week: [
       { date: '2024-01-15', count: 35 },
       { date: '2024-01-16', count: 42 },
@@ -52,6 +79,24 @@ const Dashboard: React.FC = () => {
       { date: '2023-11', count: 850 },
       { date: '2023-12', count: 780 },
       { date: '2024-01', count: 850 },
+    ],
+  };
+
+  // 區處比例資料
+  const districtData: DistrictDataSet = {
+    counting: [
+      { district: '01', count: 15 },
+      { district: '02', count: 8 },
+      { district: '03', count: 12 },
+      { district: '04', count: 5 },
+      { district: '05', count: 10 },
+    ],
+    reported: [
+      { district: '01', count: 45 },
+      { district: '02', count: 32 },
+      { district: '03', count: 28 },
+      { district: '04', count: 38 },
+      { district: '05', count: 41 },
     ],
   };
 
@@ -178,6 +223,68 @@ const Dashboard: React.FC = () => {
             </div>
           </Card>
         </Col>
+        <Col span={12}>
+          <Card 
+            title="倒數計時中區處分布"
+            className="chart-card"
+            bordered={false}
+          >
+            <div style={{ width: '100%', height: '300px' }}>
+              <ResponsiveContainer>
+                <BarChart
+                  data={districtData.counting}
+                  margin={{ top: 20, right: 30, left: 20, bottom: 10 }}
+                >
+                  <CartesianGrid strokeDasharray="3 3" />
+                  <XAxis 
+                    dataKey="district" 
+                    label={{ value: '區處', position: 'bottom' }}
+                  />
+                  <YAxis 
+                    label={{ value: '數量', angle: -90, position: 'left' }}
+                  />
+                  <Tooltip />
+                  <Bar 
+                    dataKey="count" 
+                    fill="#1890ff"
+                    name="數量"
+                  />
+                </BarChart>
+              </ResponsiveContainer>
+            </div>
+          </Card>
+        </Col>
+        <Col span={12}>
+          <Card 
+            title="本日已發送區處分布"
+            className="chart-card"
+            bordered={false}
+          >
+            <div style={{ width: '100%', height: '300px' }}>
+              <ResponsiveContainer>
+                <BarChart
+                  data={districtData.reported}
+                  margin={{ top: 20, right: 30, left: 20, bottom: 10 }}
+                >
+                  <CartesianGrid strokeDasharray="3 3" />
+                  <XAxis 
+                    dataKey="district" 
+                    label={{ value: '區處', position: 'bottom' }}
+                  />
+                  <YAxis 
+                    label={{ value: '數量', angle: -90, position: 'left' }}
+                  />
+                  <Tooltip />
+                  <Bar 
+                    dataKey="count" 
+                    fill="#52c41a"
+                    name="數量"
+                  />
+                </BarChart>
+              </ResponsiveContainer>
+            </div>
+          </Card>
+        </Col>
       </Row>
     </>
   );
@@ -208,7 +315,15 @@ const Dashboard: React.FC = () => {
   return (
     <div className="dashboard-container">
       <div className="site-header">
-        <Title level={3}>事件分析平台 (STM)</Title>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <Title level={3}>事件分析平台 (STM)</Title>
+          <Button
+            type="text"
+            icon={isDark ? <BulbOutlined /> : <BulbFilled />}
+            onClick={toggleTheme}
+            style={{ fontSize: '18px' }}
+          />
+        </div>
       </div>
       <Tabs 
         defaultActiveKey="1" 
