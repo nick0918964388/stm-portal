@@ -1,0 +1,440 @@
+.dashboard-container {
+  padding: 24px;
+  background: #f0f2f5;
+  min-height: 100vh;
+}
+
+.site-header {
+  margin-bottom: 24px;
+  padding: 16px 24px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.site-header h3 {
+  margin: 0 !important;
+}
+
+.chart-section {
+  margin-top: 24px;
+}
+
+.chart-card {
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.chart-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.chart-card .ant-card-head {
+  border-bottom: 1px solid #f0f0f0;
+  padding: 16px 24px;
+  background: #fafafa;
+  border-radius: 8px 8px 0 0;
+}
+
+.chart-card .ant-card-body {
+  padding: 24px;
+  height: 400px;
+}
+
+.list-card {
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.list-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.main-tabs {
+  background: white;
+  padding: 16px 24px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.ant-statistic-card {
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.ant-statistic-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+/* 統計卡片標題樣式 */
+.ant-statistic-title {
+  font-size: 16px !important;
+  color: rgba(0, 0, 0, 0.85) !important;
+}
+
+/* 統計卡片數值樣式 */
+.ant-statistic-content {
+  font-size: 24px !important;
+  color: #1890ff !important;
+}
+
+/* 圖表 Tooltip 樣式 */
+.custom-tooltip {
+  background-color: rgba(255, 255, 255, 0.95);
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  padding: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.tooltip-date {
+  margin: 0 0 8px 0;
+  color: #666;
+  font-size: 14px;
+}
+
+.tooltip-value {
+  margin: 0;
+  color: #1890ff;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* 圖表網格線樣式 */
+.recharts-cartesian-grid-horizontal line,
+.recharts-cartesian-grid-vertical line {
+  stroke: #f0f0f0;
+}
+
+/* 圖表軸線樣式 */
+.recharts-xAxis .recharts-cartesian-axis-line,
+.recharts-yAxis .recharts-cartesian-axis-line {
+  stroke: #d9d9d9;
+}
+
+/* 圖表刻度文字樣式 */
+.recharts-text {
+  fill: #666;
+}
+
+/* 倒數監控表格樣式 */
+.countdown-table {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.countdown-table .ant-table-thead > tr > th {
+  background: #fafafa;
+  font-weight: 600;
+}
+
+.countdown-table .ant-table-tbody > tr:hover > td {
+  background: #f5f5f5;
+  cursor: pointer;
+}
+
+/* 時間軸容器樣式 */
+.timeline-container {
+  padding: 24px;
+  background: white;
+  border-radius: 8px;
+}
+
+/* 時間軸樣式 */
+.timeline-card .ant-timeline {
+  margin: 0;
+}
+
+.timeline-card .ant-timeline-item {
+  padding-bottom: 32px;
+}
+
+.timeline-card .ant-timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+/* 時間軸內容樣式 */
+.timeline-content {
+  margin-left: 40px;
+}
+
+.timeline-event-main {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 4px 0;
+}
+
+.timeline-event-main + .timeline-event-main {
+  margin-top: 4px;
+}
+
+/* 展開按鈕樣式 */
+.timeline-expand-button {
+  margin-left: 82px;
+  color: #1890ff;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 4px 0;
+  user-select: none;
+  transition: opacity 0.3s;
+}
+
+.timeline-expand-button:hover {
+  opacity: 0.8;
+}
+
+.timeline-expand-button .anticon {
+  font-size: 12px;
+  margin-right: 4px;
+}
+
+/* 時間軸點動畫 */
+.timeline-dot {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.timeline-dot:hover {
+  transform: scale(1.1);
+}
+
+/* 時間標籤樣式 */
+.timeline-time {
+  font-family: monospace;
+  font-size: 13px;
+  color: #666;
+  padding-right: 24px;
+  font-weight: 500;
+  transition: color 0.3s;
+  white-space: nowrap;
+  min-width: 220px;
+  text-align: right;
+}
+
+.ant-timeline-item:hover .timeline-time {
+  color: #1890ff;
+}
+
+.timeline-event-tag {
+  min-width: 70px;
+  text-align: center;
+  margin: 0 !important;
+  font-size: 13px;
+  border-radius: 4px;
+}
+
+.timeline-event-text {
+  color: rgba(0, 0, 0, 0.85);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.timeline-event-description {
+  color: #666;
+  font-size: 13px;
+  padding-left: 82px;
+}
+
+/* 時間軸點和線條樣式 */
+.timeline-card .ant-timeline-item-tail {
+  border-left: 2px solid #e8e8e8;
+  left: 240px;
+}
+
+.timeline-card .ant-timeline-item-head {
+  left: 240px;
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: transparent;
+}
+
+/* 不同顏色的時間軸點 */
+.timeline-dot-red { background-color: #ff4d4f; }
+.timeline-dot-green { background-color: #52c41a; }
+.timeline-dot-orange { background-color: #faad14; }
+.timeline-dot-gold { background-color: #faad14; }
+.timeline-dot-lime { background-color: #a0d911; }
+.timeline-dot-purple { background-color: #722ed1; }
+.timeline-dot-cyan { background-color: #13c2c2; }
+.timeline-dot-blue { background-color: #1890ff; }
+
+/* 過濾器區域樣式 */
+.timeline-filters {
+  margin-bottom: 16px;
+  padding: 16px;
+  background: white;
+  border-radius: 8px;
+}
+
+.timeline-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.event-group-tag {
+  padding: 4px 12px;
+  font-size: 13px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.event-group-tag:hover {
+  opacity: 0.8;
+}
+
+/* 選擇器樣式 */
+.timeline-card .ant-select {
+  margin-bottom: 0;
+}
+
+.timeline-card .ant-select-selection-item {
+  padding: 0 !important;
+}
+
+.timeline-card .ant-select-selection-item .ant-tag {
+  margin-right: 0;
+}
+
+/* Tab 樣式 */
+.list-card .ant-tabs-nav {
+  margin-bottom: 16px;
+  padding: 0 16px;
+  background: #fafafa;
+  border-radius: 8px 8px 0 0;
+}
+
+.list-card .ant-tabs-tab {
+  padding: 12px 24px;
+  font-size: 15px;
+  transition: all 0.3s;
+}
+
+.list-card .ant-tabs-tab:hover {
+  color: #1890ff;
+}
+
+.list-card .ant-tabs-tab-active {
+  font-weight: 500;
+  background: #e6f7ff;
+}
+
+.list-card .ant-tabs-ink-bar {
+  background: #1890ff;
+  height: 3px;
+}
+
+/* 展開行樣式 */
+.ant-table-expanded-row > td {
+  background: #fff !important;
+}
+
+.ant-table-expanded-row:hover > td {
+  background: #fff !important;
+}
+
+/* 時間軸事件包裝器 */
+.timeline-event-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* 時間軸事件主要內容 */
+.timeline-event-main {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 4px 0;
+}
+
+/* 詳情觸發器 */
+.timeline-detail-trigger {
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  /* margin-left: auto; */
+}
+
+.timeline-detail-trigger:hover {
+  background: #f5f5f5;
+}
+
+.timeline-detail-trigger .anticon {
+  font-size: 12px;
+}
+
+/* 詳細資訊區域 */
+.timeline-event-details {
+  margin-left: 82px;
+  background: #fafafa;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.details-header {
+  padding: 8px 12px;
+  border-bottom: 1px solid #f0f0f0;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.details-json {
+  margin: 0;
+  padding: 12px;
+  background: #f8f9fa;
+  font-family: 'Geist Mono', monospace;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #333;
+  overflow-x: auto;
+  white-space: pre;
+}
+
+/* 美化滾動條 */
+.details-json::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.details-json::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.details-json::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 3px;
+}
+
+.details-json::-webkit-scrollbar-thumb:hover {
+  background: #999;
+}
+
+/* 時間軸內容間距 */
+.timeline-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-left: 40px;
+} 
