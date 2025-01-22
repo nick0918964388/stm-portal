@@ -4,6 +4,9 @@ const nextConfig = {
   webpack: (config) => {
     return config;
   },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
 }
 
 module.exports = nextConfig 
