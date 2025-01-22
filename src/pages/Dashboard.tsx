@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, Row, Col, Tabs } from 'antd';
-import { LineChart, BarChart } from '@ant-design/charts';
+import { Line, Column } from '@ant-design/plots';
 import { CountdownList } from '../components/CountdownList';
 import { StatisticCards } from '../components/StatisticCards';
 import { weeklyReportConfig, monthlyReportConfig } from '../config/chartConfig';
@@ -19,12 +19,12 @@ const Dashboard: React.FC = () => {
       <Row gutter={[16, 16]} className="chart-section">
         <Col span={12}>
           <Card title="近一週通報總數">
-            <LineChart {...weeklyReportConfig} />
+            <Line {...weeklyReportConfig} />
           </Card>
         </Col>
         <Col span={12}>
           <Card title="近一月通報總數">
-            <BarChart {...monthlyReportConfig} />
+            <Column {...monthlyReportConfig} />
           </Card>
         </Col>
       </Row>
